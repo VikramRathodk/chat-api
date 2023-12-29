@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activites.UserChatActivity"
+    android:orientation="vertical">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#488CE4"
+            app:titleTextColor="@color/white"
+            app:subtitle="number"
+            app:subtitleTextColor="@color/white"
+            >
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/userImg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:cropToPadding="true"
+                    android:adjustViewBounds="true"
+                    android:maxWidth="50dp"
+                    android:layout_gravity="center_vertical"
+                    android:maxHeight="50dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/profile_01"
+                    android:layout_margin="8dp"
+                     />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+
+                    >
+                    <TextView
+                        android:id="@+id/username"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Name"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        />
+
+                    <TextView
+                        android:id="@+id/usernumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Number"
+                        android:textColor="@color/white"
+                        android:layout_marginTop="5dp"
+                        android:textSize="14sp"
+                        />
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/userChatRecycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/appBarLayout"
+        android:background="#DAD0D0" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:orientation="horizontal"
+        android:background="@drawable/layout_bg"
+        android:layout_above="@id/userChatRecycler"
+
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true">
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            android:textSize="20sp"
+            android:padding="10dp"
+            android:inputType="text"
+            android:background="@drawable/edit_text_bg"
+
+            android:hint="@string/type_here"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/send"
+            android:backgroundTint="#488CE4"
+            android:layout_margin="10dp"
+
+            tools:ignore="UnusedAttribute" />
+    </LinearLayout>
+</RelativeLayout>
