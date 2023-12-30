@@ -1,0 +1,19 @@
+JsonParser parser = new JsonParser();
+
+            JsonObject jsonResponse = parser.parse(response).getAsJsonObject();
+            JsonArray productsArray = jsonResponse.getAsJsonArray("products");
+
+            List<JsonObject> productList = new ArrayList<>();
+            // Iterate through the products array and add each product to the list
+            for (int i = 0; i < productsArray.size(); i++) {
+                JsonObject product = productsArray.get(i).getAsJsonObject();
+                productList.add(product);
+                // Access specific fields in the product if needed
+                int productId = product.get("id").getAsInt();
+                String productName = product.get("name").getAsString();
+                // Use productId and productName as needed
+            }
+            // Log the contents of the productList
+            for (int i = 0; i < productList.size(); i++) {
+                Log.d(TAG, "Product " + i + ": " + productList.get(i));
+            }
